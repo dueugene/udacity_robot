@@ -33,15 +33,15 @@ void process_image_callback(const sensor_msgs::Image img)
           ROS_INFO("Ball found");
           if ( i < img.width/3) {
             ROS_INFO("left");
-            drive_robot(0.0, 0.3);
+            drive_robot(0.0, 0.5);
             return;
           } else if (i >= 2*img.width/3) {
             ROS_INFO("right");
-            drive_robot(0.0, -0.3);
+            drive_robot(0.0, -0.5);
             return;
           } else {
             ROS_INFO("forward");
-            drive_robot(0.3, 0.0);
+            drive_robot(0.5, 0.0);
             return;
           }
         }
