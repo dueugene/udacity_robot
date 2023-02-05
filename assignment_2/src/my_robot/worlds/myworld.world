@@ -4484,7 +4484,7 @@
           <pose frame=''>-0.15 0 -0.075 0 -0 0</pose>
           <geometry>
             <sphere>
-              <radius>0.07499</radius>
+              <radius>0.07495</radius>
             </sphere>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -4505,7 +4505,7 @@
           <pose frame=''>0.15 0 -0.075 0 -0 0</pose>
           <geometry>
             <sphere>
-              <radius>0.07499</radius>
+              <radius>0.07495</radius>
             </sphere>
           </geometry>
           <max_contacts>10</max_contacts>
