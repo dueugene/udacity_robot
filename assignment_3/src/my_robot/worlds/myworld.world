@@ -81,10 +81,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>554 390000000</sim_time>
-      <real_time>88 84467574</real_time>
-      <wall_time>1677034500 669493443</wall_time>
-      <iterations>87383</iterations>
+      <sim_time>670 385000000</sim_time>
+      <real_time>118 36966199</real_time>
+      <wall_time>1677072793 509186718</wall_time>
+      <iterations>115995</iterations>
       <model name='Myplace'>
         <pose frame=''>3.4372 4.76033 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -192,20 +192,20 @@
         </link>
       </model>
       <model name='cabinet'>
-        <pose frame=''>2.75167 2.92171 0 0 -0 0</pose>
+        <pose frame=''>2.7545 3.1166 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='cabinet_bottom_plate'>
-          <pose frame=''>2.75167 2.92171 0 0 -0 0</pose>
+          <pose frame=''>2.7545 3.1166 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='cafe_table'>
-        <pose frame=''>1.59174 1.88261 0 0 -0 0</pose>
+        <pose frame=''>1.67111 1.99046 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>1.59174 1.88261 0 0 -0 0</pose>
+          <pose frame=''>1.67111 1.99046 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -222,13 +222,13 @@
         </link>
       </model>
       <model name='first_2015_trash_can'>
-        <pose frame=''>4.36417 1.74004 -4e-06 2e-06 5e-06 -0.000798</pose>
+        <pose frame=''>4.36444 1.73997 -9e-06 1e-05 1.3e-05 -0.002221</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>4.36417 1.74004 -4e-06 2e-06 5e-06 -0.000798</pose>
+          <pose frame=''>4.36444 1.73997 -9e-06 1e-05 1.3e-05 -0.002221</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-1.78952 2.84111 -1.73507 -1.43093 1.42434 -3.6e-05</acceleration>
-          <wrench>-8.64472 13.7247 -8.38169 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 -1e-06 1e-06 0</acceleration>
+          <wrench>0 0 -47.3414 0 -0 0</wrench>
         </link>
       </model>
       <model name='ground_plane'>
@@ -242,10 +242,10 @@
         </link>
       </model>
       <model name='table'>
-        <pose frame=''>2.20411 5.08525 0 0 -0 0</pose>
+        <pose frame=''>2.42139 4.98834 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>2.20411 5.08525 0 0 -0 0</pose>
+          <pose frame=''>2.42139 4.98834 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -257,7 +257,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>3.26925 -0.39743 14.3479 -0 1.2298 1.62471</pose>
+        <pose frame=''>2.42821 3.17121 10.9934 0 1.5618 1.55671</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -2163,6 +2163,6 @@
       </link>
       <pose frame=''>3.59773 1.36994 0 0 -0 0</pose>
     </model>
-  <plugin filename="libcollision_map_creator.so" name="collision_map_creator"/>
+    <plugin name='collision_map_creator' filename='libcollision_map_creator.so'/>
   </world>
 </sdf>
