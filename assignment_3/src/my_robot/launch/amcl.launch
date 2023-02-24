@@ -16,9 +16,13 @@
     <!-- AMCL parameters -->
     <param name="min_particles" value="20"/>
     <param name="max_particles" value="150"/>
+    <param name="update_min_d" value="0.05"/>
     <param name="laser_model_type" value="likelihood_field"/>
-	<param name="laser_z_hit" value="0.97"/>
-	<param name="laser_z_rand" value="0.03"/>
+	<param name="laser_z_hit" value="0.5"/>
+	<param name="laser_z_rand" value="0.5"/>
+    <param name="laser_max_beams" value="60"/>
+    <param name="laser_max_range" value="5"/>
+    <param name="laser_min_range" value="0.1"/>
 	<param name="odom_alpha1" value="0.2"/>
 	<param name="odom_alpha2" value="0.2"/>
 	<param name="odom_alpha3" value="0.2"/>
