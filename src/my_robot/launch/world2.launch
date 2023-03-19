@@ -22,7 +22,7 @@
   <arg name="yaw" default="0"/>
 
   <!-- Launch other relevant files-->
-  <include file="$(find my_robot)/launch/robot_description.launch"/>
+  <include file="$(find my_robot)/launch/mapping_robot_description.launch"/>
   
   <!-- Spawn My Robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
