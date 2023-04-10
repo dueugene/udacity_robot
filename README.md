@@ -1,3 +1,24 @@
+## Assignment 5
+### to run
+in a terminal, build project:
+```bash
+catkin_make
+source devel/setup.sh
+```
+then run any of the following shell scripts
+test slam:
+```bash
+./test_slam.sh
+```
+test navigation:
+```bash
+./test_navigation.sh
+```
+home service robot:
+```bash
+./home_service.sh
+```
+
 ## Assignment 4
 ### to run
 in a terminal:
