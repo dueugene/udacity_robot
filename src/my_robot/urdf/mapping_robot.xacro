@@ -16,7 +16,7 @@
     <pose>0 0 0.1 0 0 0</pose>
 
     <inertial>
-      <mass value="15.0"/>
+      <mass value="12.0"/>
       <origin xyz="0.0 0 0.0" rpy=" 0 0 0"/>
       <inertia
           ixx="0.1" ixy="0" ixz="0"
@@ -28,43 +28,43 @@
     <collision name='collision'>
       <origin xyz="0 0 0.0" rpy=" 0 0 0"/> 
       <geometry>
-        <box size=".5 .4 .15"/>
+        <box size=".4 .3 .1"/>
       </geometry>
     </collision>
 
     <visual name='chassis_visual'>
       <origin xyz="0 0 0.0" rpy=" 0 0 0"/>
       <geometry>
-        <box size=".5 .4 .15"/>
+        <box size=".4 .3 .1"/>
       </geometry>
     </visual>
 
 
     <collision name='back_caster_collision'>
-      <origin xyz="-0.15 0 -0.075" rpy=" 0 0 0"/>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.07495"/>
+        <sphere radius="0.0499"/>
       </geometry>
     </collision>
 
     <visual name='back_caster_visual'>
-      <origin xyz="-0.15 0 -0.075" rpy=" 0 0 0"/>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.075"/>
+        <sphere radius="0.05"/>
       </geometry>
     </visual>
 
     <collision name='front_caster_collision'>
-      <origin xyz="0.15 0 -0.075" rpy=" 0 0 0"/>
+      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.07495"/>
+        <sphere radius="0.0499"/>
       </geometry>
     </collision>
 
     <visual name='front_caster_visual'>
-      <origin xyz="0.15 0 -0.075" rpy=" 0 0 0"/>
+      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.075"/>
+        <sphere radius="0.05"/>
       </geometry>
     </visual>
     <visual name='left_eye_visual'>
@@ -85,7 +85,7 @@
   <link name='left_wheel'>
 
     <inertial>
-      <mass value="5.0"/>
+      <mass value="2.0"/>
       <origin xyz="0.0 0 0.0" rpy="0 1.5707 1.5707"/>
       <inertia
           ixx="0.1" ixy="0" ixz="0"
@@ -97,14 +97,14 @@
     <collision name='collision'>
       <origin xyz="0 0 0.0" rpy="0 1.5707 1.5707"/> 
       <geometry>
-        <cylinder radius="0.15" length="0.05"/>
+        <cylinder radius="0.1" length="0.05"/>
       </geometry>
     </collision>
 
     <visual name='left_wheelvisual'>
       <origin xyz="0 0 0.0" rpy="0 1.5707 1.5707"/>
       <geometry>
-        <cylinder radius="0.15" length="0.05"/>
+        <cylinder radius="0.1" length="0.05"/>
       </geometry>
     </visual>
     
@@ -113,7 +113,7 @@
   <link name='right_wheel'>
 
     <inertial>
-      <mass value="5.0"/>
+      <mass value="2.0"/>
       <origin xyz="0.0 0 0.0" rpy="0 1.5707 1.5707"/>
       <inertia
           ixx="0.1" ixy="0" ixz="0"
@@ -125,14 +125,14 @@
     <collision name='collision'>
       <origin xyz="0 0 0.0" rpy="0 1.5707 1.5707"/> 
       <geometry>
-        <cylinder radius="0.15" length="0.05"/>
+        <cylinder radius="0.1" length="0.05"/>
       </geometry>
     </collision>
 
     <visual name='right_wheel_visual'>
       <origin xyz="0 0 0.0" rpy="0 1.5707 1.5707"/>
       <geometry>
-        <cylinder radius="0.15" length="0.05"/>
+        <cylinder radius="0.1" length="0.05"/>
       </geometry>
     </visual>
     
@@ -166,7 +166,7 @@
   <link name='camera'>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <inertial>
-      <mass value="0.1"/>
+      <mass value="1e-5"/>
       <origin xyz="0.05 0.05 0.05"/>
       <inertia
           ixx="1e-6" ixy="0" ixz="0"
@@ -198,7 +198,7 @@
   <link name="camera_link_optical"/>
   
   <joint type="continuous" name="left_wheel_hinge">
-    <origin xyz="0 0.25 0" rpy="0 0 0"/>
+    <origin xyz="0 0.2 0" rpy="0 0 0"/>
     <child link="left_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -207,7 +207,7 @@
   </joint>
   
   <joint type="continuous" name="right_wheel_hinge">
-    <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+    <origin xyz="0 -0.2 0" rpy="0 0 0"/>
     <child link="right_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -231,11 +231,19 @@
   
   <gazebo reference="left_wheel">
     <material>Gazebo/Black</material>
+	<mu1>0.3</mu1>
+	<mu2>0.3</mu2>
+	<minDepth>0.01</minDepth>
   </gazebo>
   <gazebo reference="right_wheel">
     <material>Gazebo/Black</material>
+	<mu1>0.3</mu1>
+	<mu2>0.3</mu2>
+	<minDepth>0.01</minDepth>
   </gazebo>
   <gazebo reference="chassis">
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
     <material>Gazebo/Purple</material>
   </gazebo>
   <gazebo reference="camera">
