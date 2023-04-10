@@ -28,7 +28,7 @@ TrajectoryPlannerROS:
   acc_lim_x: 1.0
   acc_lim_y: 1.0
 
-  sim_time: 0.75
+  sim_time: 1.25
 
   vx_samples: 5.0
   vtheta_samples: 10.0
