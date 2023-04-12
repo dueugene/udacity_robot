@@ -52,5 +52,8 @@
     <rosparam file="$(find my_robot)/config/base_local_planner_params.yaml" command="load" />
   </node>
   
+  <!-- Home service params -->
+  <rosparam file="$(find my_robot)/config/locations.yaml" />
+  
 
 </launch>

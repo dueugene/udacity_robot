@@ -1,0 +1,7 @@
+pickup_x: 1.0
+pickup_y: -4.0
+pickup_w: 0.707
+
+dropoff_x: 8.0
+dropoff_y: -4.0
+dropoff_w: 1.0

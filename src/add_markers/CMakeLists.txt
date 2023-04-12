@@ -135,6 +135,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(basic_shapes src/add_markers.cpp)
+add_executable(test_markers src/add_markers_test.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -148,6 +149,12 @@ add_executable(basic_shapes src/add_markers.cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(basic_shapes
+   ${catkin_LIBRARIES}
+   ${roscpp_LIBRARIES}
+   ${visualization_msgs_LIBRARIES}
+)
+
+target_link_libraries(test_markers
    ${catkin_LIBRARIES}
    ${roscpp_LIBRARIES}
    ${visualization_msgs_LIBRARIES}

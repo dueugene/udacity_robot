@@ -2,6 +2,7 @@
 #include <visualization_msgs/Marker.h>
 #include "std_msgs/Bool.h"
 #include "move_base_msgs/MoveBaseActionGoal.h"
+#include <move_base_msgs/MoveBaseGoal.h>
 
 class MarkerVisualizer 
 {
@@ -11,7 +12,7 @@ public:
     pub_ = n_.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
     //Topic you want to subscribe
-    sub_ = n_.subscribe("/move_base/goal", 5, &MarkerVisualizer::goal_callback, this);
+    sub_ = n_.subscribe("/simple_navigation_goals/goal", 5, &MarkerVisualizer::goal_callback, this);
     sub2_ = n_.subscribe("/simple_navigation_goals/show", 5, &MarkerVisualizer::arrived_callback, this);
     show_ = false;
   }
@@ -21,9 +22,10 @@ public:
     ROS_INFO("I heard: [%d]", show_);
     add_marker(x_, y_, show_);
   }
-  void goal_callback(const move_base_msgs::MoveBaseActionGoal& msg) {
-    x_ = msg.goal.target_pose.pose.position.x;
-    y_ = msg.goal.target_pose.pose.position.y;
+  
+  void goal_callback(const move_base_msgs::MoveBaseGoal& msg) {
+    x_ = msg.target_pose.pose.position.x;
+    y_ = msg.target_pose.pose.position.y;
     ROS_INFO("I heard: [%f, %f]", x_, y_);
     add_marker(x_, y_, show_);
   }
@@ -71,6 +73,7 @@ public:
     marker.lifetime = ros::Duration();
     pub_.publish(marker);
   }
+  
 private:
   ros::NodeHandle n_;
   ros::Publisher pub_;
@@ -88,8 +91,6 @@ int main(int argc, char **argv)
   //Create an object of class SubscribeAndPublish that will take care of everything
   MarkerVisualizer my_object;
 
-  // Set our initial shape type to be a cube
-  uint32_t shape = visualization_msgs::Marker::CUBE;
   ros::spin();
 
   return 0;
