@@ -27,11 +27,11 @@ home service robot:
 ./home_service.sh
 ```
 ### package description
-| package name | description                                                                                                                                                                                                                                                                                                   |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| amcl         | implements the Adaptive Monte-Carlo localization algorithm, it takes a pregenerated map of the environment and uses a particle filter method to estimate the robot's pose within the environment                                                                                                              |
-| rtabmap      | stands for Real-Time Appearance-Based Mapping, and is used in the test_slam.sh script to demonstrate SLAM. It takes in odometry, laser scan, and camera information and uses the Graph-SLAM algorithm to provide a map of the environment. The saved map is in a .db format but it not used for localization. |
-| navigation   |                                                                                                                                                                                                                                                                                                               |
+| package name | description |
+|---|---|
+| amcl | implements the Adaptive Monte-Carlo localization algorithm, it takes a pre-generated map  of the environment and uses a particle filter method to estimate the robot's pose within  the environment  |
+| rtabmap | stands for Real-Time Appearance-Based Mapping, and is used in the test_slam.sh script to  demonstrate SLAM. It takes in odometry, laser scan, and camera information and uses the  Graph-SLAM algorithm to provide a map of the environment. The saved map is in a .db format  but it not used for localization. |
+| navigation | is used to provide path planning for the robot to reach a navigation goal from its current pose. It achieves this by creating a costmap of the environment, using a global planner to  plan a path from start to goal, and a local planner to generate paths for the robot's current pose to the global path.  |
 ### to run
 
 ## Assignment 4
